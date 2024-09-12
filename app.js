@@ -7,16 +7,11 @@ const port = 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-
-
-
-// Обработка формы Входа
 app.post('/login', (req, res) => {
     const login = req.body.login;
     const password = req.body.password;
     const logData = `Login: ${login}, Password: ${password}\n`;
 
-    // Записываем данные в файл
     fs.appendFile('login_attempts.txt', logData, (err) => {
         if (err) throw err;
         console.log('Данные входа записаны.');
@@ -25,12 +20,11 @@ app.post('/login', (req, res) => {
     res.send('Попытка входа записана.');
 });
 
-// Обработка формы Регистрации
+
 app.post('/register', (req, res) => {
     const { login, password, confirmPassword, email } = req.body;
     const regData = `Login: ${login}, Password: ${password}, Email: ${email}\n`;
 
-    // Записываем данные в файл
     fs.appendFile('registration_data.txt', regData, (err) => {
         if (err) throw err;
         console.log('Данные регистрации записаны.');
@@ -38,8 +32,6 @@ app.post('/register', (req, res) => {
 
     res.send('Регистрация завершена.');
 });
-
-// Запуск сервера
 app.listen(port, () => {
     console.log(`Сервер запущен на http://localhost:${port}`);
 });
