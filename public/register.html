@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Домашняя</a></li>
+        <li><a href="news.html">Новости</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <div class="auth-links">
+            <a href="login.html">Вход</a> |
+            <a href="register.html">Регистрация</a>
+        </div>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Регистрация</h2>
+    <form action="/register" method="post">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" required>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Подтверждение пароля:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+
+<footer>
+    &copy; 2024 Мой Вебсайт
+</footer>
+
+</body>
+</html>
